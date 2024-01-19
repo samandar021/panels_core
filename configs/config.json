@@ -1,0 +1,77 @@
+{
+    "common": {
+        "clickhouse_db": {
+            "host": "127.0.0.1",
+            "port": 9000,
+            "user": "default",
+            "password": "",
+            "database": "default"
+        },
+        "db": {
+            "host": "db",
+            "username": "root",
+            "password": "root",
+            "db_panels": "panels",
+            "db_panel_template": "panel_template",
+            "port": 3306,
+            "pool_size": 11,
+            "database": "panels"
+        },
+        "rabbitmq": {
+            "connection": {
+                "host": "127.0.0.1",
+                "port": 5672
+            },
+            "credentials": {
+                "username": "",
+                "password": ""
+            },
+            "timeout": 30,
+            "queue_name": "",
+            "prefetch_count": 10
+        },
+        "redis": {
+            "connection": {
+                "host": "redis",
+                "port": "6379"
+            }
+        },
+        "captcha": {
+            "recaptcha": {
+                "site_keys": "6LdYJ48nAAAAAOR9Fx66xKgIBrAZUHtPICY6NQUF",
+                "secret": "6LdYJ48nAAAAACh7jqzav_h0QMesHKomjN0mIvv0"
+            },
+            "hcaptcha": {
+                "site_keys": "7d5409fa-52b9-4a73-a5cf-4dad16addc08",
+                "secret": "0xAb6BDCe1b247AA1E211F829C0a2477E74C4daF36"
+            }
+        },
+        "geoip": {
+            "api_key": "",
+            "license_key": ""
+        },
+        "sentry_key": "",
+        "ddtrace_enable": true,
+        "admin_captcha_enabled": 1,
+        "min_service_rate": 0.0001,
+        "encryption": {
+            "key_size": 16,
+            "block_size": 16,
+            "salt_size": 16,
+            "master_key": "test_master_key"
+        },
+        "docs_url": "/3ii0cbxoqt4kib4zr8j0t6v2jf566yfn",
+        "cookies_for_authorization_min": 1800,
+        "cookies_for_authorization_max": 172800,
+        "system_domain": ".example.link",
+        "mysql_commands": {
+            "mysql": "mysql",
+            "mysqldump": "mysqldump"
+        },
+        "user_apikey_generate": {
+            "user_apikey_salt": "71e6210fbd0ad0c20582a8d5ffe0a5af",
+            "user_apikey_length": 32
+        },
+        "secret_key": "secret_key"
+    }
+}

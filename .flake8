@@ -1,0 +1,13 @@
+[flake8]
+exclude =
+    migration_system,
+    *alembic*.py,
+    *.ini
+max-line-length=120
+show-source=True
+statistics=True
+max-complexity=10
+count=True
+extend-ignore=
+    W605
+    C901

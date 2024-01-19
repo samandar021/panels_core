@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+
+  app:
+    container_name: fastapi
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: >
+      sh -c "pipenv run uvicorn panels_project.app:app --host 0.0.0.0 --port 8000 --reload"
+#      sh -c "pipenv run gunicorn -c gunicorn_config.py panels_project.app:app"
+    links:
+      - db
+      - redis
+    depends_on:
+      - db
+      - redis
+    extra_hosts:
+      - "domain_name:127.0.0.1"
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+#    rabbitmq:
+#      image: 'rabbitmq:latest'
+#      container_name: rabbitmq

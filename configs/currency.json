@@ -1,0 +1,12 @@
+{
+  "USD": {
+    "name": "United States Dollars",
+    "money_format": "${{value}}",
+    "sign": "$"
+  },
+  "RUB": {
+    "name": "Russian Rubles",
+    "money_format": "{{value}} ₽",
+    "sign": "₽"
+  }
+}
